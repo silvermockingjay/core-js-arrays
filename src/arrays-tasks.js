@@ -402,11 +402,10 @@ function generateOdds(len) {
  *   getElementByIndices([[[ 1, 2, 3]]], [ 0, 0, 1 ]) => 2        (arr[0][0][1])
  */
 function getElementByIndices(arr, indices) {
-  const copyOfIndices = indices.slice();
-  if (copyOfIndices.length === 1) {
-    return arr[copyOfIndices[0]];
+  if (indices.length === 1) {
+    return arr[indices[0]];
   }
-  return getElementByIndices(arr[copyOfIndices[0]], indices.slice(1));
+  return getElementByIndices(arr[indices[0]], indices.slice(1));
 }
 
 /**
